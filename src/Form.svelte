@@ -1,5 +1,6 @@
 <script lang="ts">
   import TaskContainer from "./TaskContainer.svelte";
+  import { tasksArray } from "./stores";
   type TaskType ={
     value: string,
     date: string
@@ -7,7 +8,7 @@
   }
   
     let taskValue : TaskType 
-    let tasksArray : TaskType[]= []
+    
     console.table(tasksArray)
 
     const inputHandler =(event: Event)=> {
@@ -22,7 +23,7 @@
       event.preventDefault()
       try{
         if(taskValue.value !== ''){
-        tasksArray =[...tasksArray, taskValue]
+        $tasksArray=[...$tasksArray, taskValue]
       }
       }catch(error){
         console.log(error)
@@ -32,7 +33,7 @@
 
     const clearHandler=(event: MouseEvent)=> {
       event.preventDefault()
-      tasksArray = []
+      $tasksArray = []
     }
     // let tasks =localStorage.setItem('tasks', JSON.stringify(tasksArray))
 </script>
@@ -48,12 +49,12 @@
       <button on:click={saveHandler} class="bg-dark-blue hover:bg-blue-gray hover:text-dark-blue text-pewter mt-2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
         Save
       </button>
-      <button disabled={tasksArray.length === 0 ? true : false} on:click={clearHandler} class="bg-dark-blue hover:bg-blue-gray hover:text-dark-blue text-pewter disabled:bg-pewter disabled:text-yellow mt-2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+      <button disabled={$tasksArray.length === 0 ? true : false} on:click={clearHandler} class="bg-dark-blue hover:bg-blue-gray hover:text-dark-blue text-pewter disabled:bg-pewter disabled:text-yellow mt-2 font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
         Clear
       </button>
     </div>
   </div>
 </form>
-{#if tasksArray.length !== 0}
-    <TaskContainer tasks={tasksArray}/>
+{#if $tasksArray.length !== 0}
+    <TaskContainer tasks={$tasksArray}/>
 {/if}
