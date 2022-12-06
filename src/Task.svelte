@@ -16,21 +16,21 @@
 
 </script>
 
-<div class='grid grid-cols-10 rounded px-6 py-6 fit-content justify-items-stretch'>
+<div class='grid xl:grid-cols-12 lg:grid-cols-6 sm:grid-cols-4 rounded px-6 py-6 min-h-fit justify-items-stretch'>
     <div class={`col-span-4 text-dark-blue justify-self-start`}>
         <p class={`${done === true ? `line-through` : ''}`}>
             {task.value}
         </p>
     </div>
-    <div class='col-span-1 text-dark-blue justify-self-start'>
-     <p class={`${done === true ? `line-through` : ''}`}>
-        {task.date}
-    </p>
-    </div>
-    <div class='col-span-3 text-dark-blue justify-self-end'>
+    <div class='col-span-2 text-dark-blue justify-self-end'>
     <p class={`${done === true ? `line-through` : ''}`}>
         {task.user}
         </p>
+    </div>
+    <div class='col-span-4 sm:col text-dark-blue justify-self-start'>
+     <p class={`${done === true ? `line-through` : ''}`}>
+        {task.date}
+    </p>
     </div>
     <button on:click={deleteTask} class='col-span-1 text-dark-blue justify-self-end'>
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
