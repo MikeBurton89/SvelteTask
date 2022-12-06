@@ -1,2 +1,13 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+    import Form from "../Form.svelte";
+    import Title from "../Title.svelte"
+
+</script>
+
+
+<div class='flex flex-col items-center mt-5 w-screen h-screen'>
+<Title/>
+<Form />
+</div>
+
+
