@@ -16,14 +16,14 @@
 
 </script>
 
-<div class='grid xl:grid-cols-12 lg:grid-cols-6 sm:grid-cols-4 rounded px-6 py-6 min-h-fit justify-items-stretch'>
+<div class='grid gap-6 2xl:grid-cols-12 xl:grid-cols-8 lg:grid-cols-4 sm:grid-cols-4 rounded px-6 py-6 place-items-center min-h-min'>
     <div class={`col-span-4 text-dark-blue justify-self-start`}>
-        <p class={`${done === true ? `line-through` : ''}`}>
+        <p class={`${done === true ? `line-through` : ''} font-bold`}>
             {task.value}
         </p>
     </div>
     <div class='col-span-2 text-dark-blue justify-self-end'>
-    <p class={`${done === true ? `line-through` : ''}`}>
+    <p class={`${done === true ? `line-through` : ''} `}>
         {task.user}
         </p>
     </div>

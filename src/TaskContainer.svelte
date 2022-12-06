@@ -8,9 +8,9 @@
   }
 </script>
 
-<div class='grid lg:grid-cols-4 grid-cols-1 gap-2.5 mt-5 px-6 py-6 w-screen h-fit-content bg-blue-gray justify-items-center'>
+<div class='grid-cols-1 grid lg:grid-cols-4 gap-2.5 mt-5 px-6 py-6 w-screen h-fit-content bg-blue-gray justify-items-center'>
     {#each tasks as task }
-    <div class='col-span-1 w-fit-content h-20 bg-yellow rounded shadow-lg'>    
+    <div class='col-span-1 w-fit-content bg-yellow rounded shadow-lg h-fit'>    
         <Task task={task}/>
     </div>
     {/each}
