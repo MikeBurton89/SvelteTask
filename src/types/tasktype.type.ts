@@ -1,5 +1,5 @@
 export type TaskType ={
     value: string,
-    date: number
+    date: string
     user: string
   }
